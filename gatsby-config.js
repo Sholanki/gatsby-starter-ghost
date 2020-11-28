@@ -183,6 +183,20 @@ module.exports = {
                 addUncaughtPages: true,
             },
         },
+		{
+		  resolve: `gatsby-theme-garden`,
+		  options: {
+			rootNote: "/notes/readme",
+			contentPath: `${__dirname}/..`,
+			ignore: [
+			  "**/_layouts/**",
+			  "**/.git/**",
+			  "**/.github/**",
+			  "**/.vscode/**",
+			  "/netlify.toml"
+			],
+		  },
+		},
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
