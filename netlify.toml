@@ -1,6 +1,12 @@
 [build]
-  command = "NODE_ENV=production gatsby build"
   publish = "public/"
+
+  # Default build command.
+  command = "npm install && npm run build -- --prefix-paths"
+
+  # by default Netlify ignores changes outside the root, we need to force it to build on any change
+
+  ignore = "git diff --quiet HEAD^ HEAD"
 
 [template]
   incoming-hooks = ["Ghost"]
